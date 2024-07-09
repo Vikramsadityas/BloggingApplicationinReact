@@ -39,12 +39,11 @@ function Header() {
   return (
     <header className='py-3 shadow bg-gray-300'>
       <Container>
-        <nav className='flex'>
+        <nav className='flex justify-center items-center'>
           <div className='mr-4'>
             <Link to='/'>
-              <Logo width='70px'   />
-
-              </Link>
+              <Logo width='200px'/>
+            </Link>
           </div>
           <ul className='flex ml-auto'>
             {navItems.map((item) => 
