@@ -1,9 +1,8 @@
 import React from 'react'
-
-function Logo({width}) {
+function Logo({width,height="60px"}) {
   return (
     <div>
-      <img src="src\assets\Postpit_logo-2.png" width={width} alt="" />
+      <img src="../../src/assets/PostPitLogo_1.png" width={width} height={height} alt="" />
     </div>
   )
 }
