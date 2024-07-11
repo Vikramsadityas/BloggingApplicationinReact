@@ -33,9 +33,10 @@ export default function Post() {
     };
 
     return post ? (
-        <div className="py-8">
+        <div className="py-8 bg-gray-300 rounded-2xl m-4 p-2">
             <Container>
-                <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
+                <div className="flex  items-center justify-center gap-14">
+                <div className=" flex justify-center mb-4 relative bg-white rounded-xl p-2  m-auto">
                     <img
                         src={appwriteService.getFilePreview(post.featuredImage)}
                         alt={post.title}
@@ -45,22 +46,25 @@ export default function Post() {
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgColor="bg-green-500" className="mr-3">
+                                <Button bgColor="bg-green-500" className="mr-3 hover:bg-green-400">
                                     Edit
                                 </Button>
                             </Link>
-                            <Button bgColor="bg-red-500" onClick={deletePost}>
+                            <Button bgColor="bg-red-500" className="hover:bg-red-400" onClick={deletePost}>
                                 Delete
                             </Button>
                         </div>
                     )}
                 </div>
-                <div className="w-full mb-6">
-                    <h1 className="text-2xl font-bold">{post.title}</h1>
+                <div className="flex flex-col items-center justify-center">
+                <div className="w-full mb-4">
+                    <h1 className="text-2xl font-bold text-left text-black">{post.title}</h1>
                 </div>
-                <div className="browser-css">
+                <div className="browser-css text-left font-semibold">
                     {parse(post.content)}
-                    </div>
+                </div>
+                </div>
+                </div>
             </Container>
         </div>
     ) : null;
