@@ -36,7 +36,7 @@ function Home() {
                     <p>Insights, inspiration, and ideas from the heart of India's tech revolution</p>
                     <Link to="/all-posts">
                     <button className=' hover:bg-blue-300 hover:rounded-full w-12 h-12 flex items-center justify-center'>
-                        <img src="../../src/assets/angle-right.svg" alt="" className='w-10'/>
+                        <img src="../../public/angle-right.svg" alt="" className='w-10'/>
                     </button>
                     </Link>
                 </div>
