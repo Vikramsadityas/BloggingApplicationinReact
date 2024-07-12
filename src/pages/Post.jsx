@@ -13,7 +13,8 @@ export default function Post() {
     const userData = useSelector((state) => state.auth.userData);
 
     const isAuthor = post && userData ? post.userId === userData.$id : false;
-        
+    
+    console.log("val:- ",isAuthor)
     useEffect(() => {
         if (slug) {
             appwriteService.getPost(slug).then((post) => {
@@ -33,16 +34,16 @@ export default function Post() {
     };
 
     return post ? (
-        <div className="py-8 bg-gray-300 rounded-2xl m-4 p-2">
+        <div className="py-8 bg-gray-300 rounded-2xl m-4 p-2 ">
             <Container>
-                <div className="flex  items-center justify-center gap-14">
-                <div className=" flex justify-center mb-4 relative bg-white rounded-xl p-2  m-auto">
+                <div className="flex items-center justify-center gap-14 max-sm:flex-col">
+                <div className=" flex justify-center items-center relative bg-white rounded-xl p-2  ">
                     <img
+                    
                         src={appwriteService.getFilePreview(post.featuredImage)}
                         alt={post.title}
-                        className="rounded-xl"
+                        className="rounded-xl w-[1280px]"
                     />
-
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>

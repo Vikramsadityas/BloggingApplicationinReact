@@ -7,6 +7,7 @@ import store from './store/store.js'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import { AuthLayout, Login } from './components/index.js'
+import {NextUIProvider} from '@nextui-org/react'
 // import Card from './components/Card.jsx'
 
 import AddPost from "./pages/AddPost";
@@ -81,8 +82,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={store}>
-    <RouterProvider router={router}/>
-    </Provider>
+    <NextUIProvider>
+        <Provider store={store}>
+            <RouterProvider router={router}/>
+        </Provider>
+    </NextUIProvider>
   </React.StrictMode>,
 )

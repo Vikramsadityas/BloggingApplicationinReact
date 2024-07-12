@@ -11,11 +11,11 @@ function AllPosts() {
         }
     })
   return (
-    <div className='w-full py-8'>
+    <div className='py-8 w-full mt-4 text-center bg-gray-200 h-auto'>
         <Container>
-            <div className='flex flex-wrap'>
-                {posts.map((post) => (
-                    <div key={post.$id} className='p-2 w-1/4'>
+            <div className='flex max-sm:flex-col max-sm:justify-center max-sm:items-center max-sm:w-screen max-sm:overflow-x-auto h-full'>
+                {posts.map((post,index) => (
+                    <div key={index} className='p-2 w-1/4 max-sm:w-full flex '>
                         <PostCard {...post} />
                     </div>
                 ))}
